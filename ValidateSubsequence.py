@@ -1,3 +1,10 @@
+#first understand what is a subsequence..
+
+# input: nums = [3,5,2,6,1], seq = [3,2,6]
+# output: True
+# input: nums = [3,5,2,6,1], seq = [3,1,5]
+# output: False
+
 # Time - O(n)   Space - O(1)
 def validate(nums,seq):
     if len(seq) > len(nums):
