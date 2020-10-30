@@ -26,3 +26,14 @@ def isMonotonic(nums):
                 return False
     return True
    
+    
+# Time - O(n)  |  Space - O(1)
+def isMonotonice(nums):
+    increasing, Decreasing = True, True
+    for i in range(1,len(nums)):
+        if a[i] > a[i-1]:
+            decreasing = False
+        if a[i] < a[i-1]:
+            increasing = False
+            
+    return increasing or decreasing 
