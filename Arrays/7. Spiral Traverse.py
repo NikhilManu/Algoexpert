@@ -1,4 +1,6 @@
 """
+Q. Traverse the mxn Array in spiral order and return the resultant array.
+
 Case 1:
 [
  [ 1, 2, 3 ],
@@ -88,3 +90,5 @@ def Spiral(arr):
 
     return res
 
+   
+   """ There exist a Recursive Solution which is almost similar to the above method """
