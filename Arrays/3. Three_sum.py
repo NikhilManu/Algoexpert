@@ -1,5 +1,8 @@
-1.) # 3 Sum with distinct elements
-    # resultant array cannot contain duplicate triplets
+"""1.)  Given Array with distinct elements and a target value. Find 3 numbers such that their sum is equal to target value.
+
+    Note: 1. Resultant array cannot contain duplicate triplets
+          2. Given array nums does not contain duplicate elements.
+"""
 
 # Time - O(n^2)   Space - O(n)
 def 3Sum(nums,target):
@@ -20,8 +23,11 @@ def 3Sum(nums,target):
     return res
 
 
-2.) #3 sum with regular array which can contain duplicate elements
-    #resultant array cannot contain duplicate triplets
+"""1.)  Given an Array and a target value. Find 3 numbers such that their sum is equal to target value.
+
+    Note: 1. Resultant array cannot contain duplicate triplets
+          2. Given array nums can contain duplicate Elements
+"""
 
 # Time  - O(n^2)   Space - O(n)
 def 3Sum(nums,target):
