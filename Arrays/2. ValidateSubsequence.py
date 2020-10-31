@@ -1,9 +1,14 @@
-#first understand what is a subsequence..
+"""
+Q. Given an array - nums ans array - seq.Check whether seq is subsequence of nums.
+ In Test Case 1: seq = [3,2,6] and in array nums also the 3, 2, 6  in the same order ie..[ ......, 3 ,....., 2 ,......., 6 , .......]
 
-# input: nums = [3,5,2,6,1], seq = [3,2,6]
-# output: True
-# input: nums = [3,5,2,6,1], seq = [3,1,5]
-# output: False
+ input: nums = [9,3,5,2,6,1], seq = [3,2,6]
+ output: True
+ 
+ input: nums = [3,5,2,6,1], seq = [3,1,5]
+ output: False
+
+"""
 
 # Time - O(n)   Space - O(1)
 def validate(nums,seq):
