@@ -1,3 +1,7 @@
+""" Q. Given an array - nums and a target value. Find two distinct numbers in array such that their sum is target value.
+You may assume there exist exactly one solution only.
+
+"""
 # Time - O(nlogn)  Space - O(1)
 
 def 2sum(nums,target):
