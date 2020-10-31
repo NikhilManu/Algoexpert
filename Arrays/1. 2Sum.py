@@ -1,4 +1,4 @@
-""" Q. Given an array - nums and a target value. Find two distinct numbers in array such that their sum is target value.
+""" Q. Given an array - nums of distinct elements and a target value. Find two distinct numbers in array such that their sum is target value.
 You may assume there exist exactly one solution only.
 
 """
