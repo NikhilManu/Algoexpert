@@ -5,7 +5,7 @@ Find all unique quadruplets in the array which gives the sum of target.
 Notice that the solution set must not contain duplicate quadruplets.
 Note : The array will not contain duplicate elements
 """
-Time - avg-O(n^2)  | Space  - O(n^2)
+#Time - avg-O(n^2)  | Space  - O(n^2)
 def 4Sum(nums,target):
     res = []
     dic = {}
@@ -75,6 +75,25 @@ def 4Sum(nums,target):
 # Solution 2 ---> 
 ----------------------------
 # Time - O(n^2) for avg case  |   Space - O(n^2)
-
+def 4Sum(nums,target):
+    res = set()  # To eliminate Duplicates
+    dic = {}
+    for i in range(1,len(nums)-1):
+        for j in range(i+1,len(nums)):
+            cur = nums[i] + nums[j]
+            diff = target - cur
+            if diff in dic:
+                for pairs in dic[diff]:
+                    quadruplet = tuple(sorted(pairs + [nums[i],nums[j]]))       # It is important to make it a Tuple, otherwise we cant really add it to set.
+                    res.add(quadruplet)         
+                    
+        for k in range(i):
+            cur = nums[i] + nums[k]
+            if cur not in dic:
+                dic[cur] = [ [nums[i],nums[k] ]
+            else:
+                dic[cur].append( [nums[i],nums[k]] )
+                            
+    return list(res)
 
 
