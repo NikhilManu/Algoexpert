@@ -3,6 +3,22 @@ Given an array nums of n integers and an integer target, are there elements a, b
 Find all unique quadruplets in the array which gives the sum of target.
 
 Notice that the solution set must not contain duplicate quadruplets.
+Note : The array will not contain duplicate elements
+"""
+Time - avg-O(n^2)  | Space  - O(n^2)
+def 4Sum(nums,target):
+    res = []
+    dic = {}
+    for i in range(1,len(nums)-1):
+        for j in range(i+1,len(nums)):
+            
+
+
+"""
+Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? 
+Find all unique quadruplets in the array which gives the sum of target.
+
+Notice that the solution set must not contain duplicate quadruplets.
 Note: The array can also contain duplicate elements
 
 Input: nums = [1,0,-1,0,-2,2], target = 0
