@@ -116,7 +116,7 @@ def 4Sum(nums,target):
                         res.add(quad)
 
             if cur in dic:
-                dic[cur].append([i,j])  # Index is stored. Above Solution stores the values, not the index
+                dic[cur].append([i,j])  # Index is stored. Solution 2 stores the values, not the index
             else:
                 dic[cur] = [[i,j]]
     return list(res)
