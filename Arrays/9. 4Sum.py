@@ -11,6 +11,21 @@ def 4Sum(nums,target):
     dic = {}
     for i in range(1,len(nums)-1):
         for j in range(i+1,len(nums)):
+            cur = nums[i] + nums[j]
+            diff = target - cur
+            if diff in dic:
+                for pairs in dic[diff]:
+                    res.append(pairs + [nums[i],nums[j]])
+                    
+        for k in range(i):
+            cur = nums[i] + nums[k]
+            if cur not in dic:
+                dic[cur] = [ [nums[i],nums[k] ]
+            else:
+                dic[cur].append( [nums[i],nums[k]] )
+                            
+    return res
+               
             
 
 
