@@ -96,4 +96,27 @@ def 4Sum(nums,target):
                             
     return list(res)
 
+                            
+# Solution 3 ---->  Here index is used to avoid double counting.
+---------------------------------------------
+# Time - O(n^2) for avg case  |   Space - O(n^2)
+def 4Sum(nums,target):
+    res = set()
+    dic = {}
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)):
+            cur = nums[i] + nums[j]
+            diff = target - cur
+            if diff in dic:
+                for pair in dic[diff]:
+                    x,y = pair
+                    if i != x and i != y and j != x and j != y:
+                        quad = tuple(sorted([ nums[i],nums[j],nums[x],nums[y] ]))
+                        res.add(quad)
+
+            if cur in dic:
+                dic[cur].append([i,j])  # Index is stored. Above Solution stores the values, not the index
+            else:
+                dic[cur] = [[i,j]]
+    return list(res)
 
