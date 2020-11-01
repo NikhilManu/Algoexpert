@@ -40,6 +40,8 @@ Input: nums = [1,0,-1,0,-2,2], target = 0
 Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
 
 """
+#Solution 1 (Same as 3 SUm)
+------------------------                            
 # Time - O(n^3)  |   Space -  O(1) if resultant array is not considered else O(n)
 def 4Sum(nums,target):
     result = []
@@ -68,5 +70,11 @@ def 4Sum(nums,target):
                     l += 1
                     r -= 1
     return result
+                            
+                            
+# Solution 2 ---> 
+----------------------------
+# Time - O(n^2) for avg case  |   Space - O(n^2)
 
-# Solution is almost same as 3 sum
+
+
