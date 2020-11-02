@@ -14,7 +14,8 @@ Note: Each Score is Unique.
 Return the minimum number of rewards you must give to the students
 
 EXAMPLE:
-[8,4,2,1,3,6,7,9,5]  ->  [4,3,2,1,2,3,4,5,1]  ->  25
+Input : [8,4,2,1,3,6,7,9,5] 
+Output : 25
 
 """
 
