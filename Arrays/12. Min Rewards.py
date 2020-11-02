@@ -86,7 +86,7 @@ def MinRewards(nums):
     return sum(res)
 
 
-"""
+** """
 --------------
 LeetCode Qn. Candy
 --------------
@@ -96,7 +96,7 @@ This Qn is same as Min Rewards but the only difference is:
 Input: [1,2,3,5,4,3,2,1,4,3,2,1,3,2,1,1,2,3,4]
 Output: 47    
 
-"""
+""" **
 
 # Solution 1 ---> Naive Solution
 # Time - O(n^2)  |  Space - O(n)
