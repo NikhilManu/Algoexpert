@@ -74,6 +74,69 @@ def expand(i,nums,res):
 # Solution 3 ---> Left - Right Pass.
 # Time  - O(n)  |  Space -  O(n)
 def MinRewards(nums):
+    res = [1] * len(nums)
+    for i in range(1,len(nums)):
+        if nums[i] > nums[i-1]:
+            res[i] = res[i-1] + 1
+
+    for i in range(len(nums)-2,-1,-1):
+        if nums[i] > nums[i+1]:
+            res[i] = max(res[i],res[i+1]+1)
+
+    return sum(res)
+
+
+"""
+--------------
+LeetCode Qn. Candy
+--------------
+This Qn is same as Min Rewards but the only difference is:
+   -- The given array nums may contain duplicate elements
+   
+Input: [1,2,3,5,4,3,2,1,4,3,2,1,3,2,1,1,2,3,4]
+Output: 47    
+
+"""
+
+# Solution 1 ---> Naive Solution
+# Time - O(n^2)  |  Space - O(n)
+def MinRewards(nums):
+    res = [1] * len(nums)
+    for i in range(1,len(nums)):
+        j = i - 1
+        if nums[i] > nums[j]:
+            res[i] = res[j] + 1
+        elif num[i] < nums[j]: 
+            while j >= 0 and nums[j] > nums[j+1]:
+                res[j] = max(res[j] , res[j+1] + 1)
+                j -= 1
+        else:
+            continue
+    return sum(res)
+# This is Almost Same As the Naive Qn of MIn Rewards
+
+
+# Solution 2 ---> Left - Right Pass.
+# Time  - O(n)  |  Space -  O(n)
+def MinRewards(nums):
+    res = [1] * len(nums)
+    for i in range(1,len(nums)):
+        if nums[i] > nums[i-1]:
+            res[i] = res[i-1] + 1
+
+    for i in range(len(nums)-2,-1,-1):
+        if nums[i] > nums[i+1]:
+            res[i] = max(res[i],res[i+1]+1)
+
+    return sum(res)
+# This Solution is Same as that of Min Rewards
+
+
+"""
+Solution 2 of Min Rewards is not used as when duplicate values are encountered. The Solution becomes more Complex.
+"""
+
+
     
     
                 
