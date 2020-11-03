@@ -1,9 +1,21 @@
 """
-Given List of dict of blocks and requirement Array.
-Choose the Best apartment from where the distance to each requirement is minimum.
-Assume each index of Array block is an Apartment
+You're looking to move into a new apartment, and you're given a list of blocks where each block contains an apartment
+that you could move into. In order to pick your apartment, you want to optimize its location.
+You also have a list of requirements:a list of buildings that are important to you.
+For instance, you might value having a school and a gym near your apartment.
+The list of blocks that you have contains information at every block about all of the buildings that are present and
+absent at the block in question.
+For instance, for every block, you might know whether a school, a pool, an office, and a gym are present or not.
+In order to optimize your life, you want to minimize the farthest distance you'd have to walk from your apartment to
+reach all of your required buildings.
+Write a function that takes in a list of blocks and a list of your required buildings and that returns the location
+(the index) of the block that is most optimal for you.
 
-Input: Block - [ {sc:True,g:False,st:False}, {sc:False,g:True,st:False}, {sc:True,g:True,st:False}, {sc:True,g:False,st:False}, {sc:True,g:False,st:True} ]     
+Input: Block - [ {sc:True,g:False,st:False}, 
+                     {sc:False,g:True,st:False}, 
+                     {sc:True,g:True,st:False}, 
+                     {sc:True,g:False,st:False}, 
+                     {sc:True,g:False,st:True} ]     
        Req - [ g,sc,st] # Assume sc - school and g - gym and st - store 
 Ouptut: 3
 Explanation: since we have to travel maximum of 1 block for every requirement
