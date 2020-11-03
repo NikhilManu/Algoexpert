@@ -57,7 +57,7 @@ def getmaxDistancefromBlock(blocks,minDistancesfromblock):
     for i in range(len(blocks)):
         maxdist = float('-inf')
         for j in range(len(minDistancesfromblock)):
-            maxdist = max(maxdist, minDistancesfromblock[j][i])
+            maxdist = max(maxdist, minDistancesfromblock[j][i])  # This is [j][i] not [i][j].
         maxDistance[i] = maxdist
     return maxDistance
         
