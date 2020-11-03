@@ -17,4 +17,72 @@ Sample input:
 Sample output: ['11:30', '12:001 , '15:00', '16:00', '18:00', '18:30']
 """
 
-# Solution 1 ---> 
+# Solution 1 --->  
+# Time - O(c1 + c2)  | Space - O(c1 + c2)
+---------------------------------
+
+def CalendarMatching(c1,db1,c2,db2,dur):
+    updated_c1 = updateCalendar(c1,db1)
+    updated_c2 = updateCalendar(c2,db2)
+    mergedcalendar = merge(updated_c1,updated_c2)
+    flattenedcalendar = flatten(mergedcalendar)
+    return getavailabilities(flattenedcalendar,dur)
+    
+    
+def updateCalendar(c,db):
+    updated_c = [['00:00' , db[0] ]] + c[:]  + [ [db[1], '23:59'] ]
+    return list(map(lambda m: [timetomin(m[0]),timetomin(m[1])],updated_c))
+
+def merge(c1,c2):
+    merged = []
+    i,j = 0,0
+    while i < len(c1) amd j < len(c2):
+        if c1[i][0] < c2[j][0]:
+            merged.append(c1[i])
+            i += 1
+        else:
+            merged.append(c2[j])
+            j += 1
+            
+    while i < len(c1):
+        merged.append(c1[i])
+        i += 1
+    while j < len(c2):
+        merged.append(c2[j])
+        j += 1
+    
+    return merged
+
+def flatten(c):
+    flat = [c[0][:]]
+    for i in range(1,len(c)):
+        curstart,curend = c[i]
+        prevstart,prevend = flat[-1]
+        
+        if curstart <= prevend:
+            newtime = [prevstart, max(curend,prevend)]
+            flat[-1] = newtime
+        else:
+            flat.append(c[i][:])
+    return flat
+  
+def getavailabilities(c,dur):
+    avail = []
+    for i in range(1,len(c)):
+        prevend = c[i-1][1]
+        curstart = c[i][0]
+        duration = curstart - prevend
+        if duration >= dur:
+            avail.append([prevend,curstart])
+    
+    return list(map(lambda m : [mintohour(m[0]),mintohour(m[1])],avail))
+
+def mintohour(time):
+    hours = str(time//60)
+    mins = '0' + str(time%60) if time % 60 < 10 else str(time%60)
+    return hours + ':' + mins
+ 
+def timetomin(time):
+    hours,mins = time.split(':')
+    return int(hours) * 60 + int(mins)
+
