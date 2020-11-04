@@ -46,7 +46,7 @@ def LongestSubstringWithoutDuplicates(s):
     start = 0
     for i,ch in enumerate(s):
         if ch in used:
-            start = max(start, used[ch] + 1)
+            start = max(start, used[ch] + 1)    # if max(start,....) is not used. Try Solving it for the case 'abba'. This will break
         long = max(long, i-start +1)   
         used[ch] = j
     return long
