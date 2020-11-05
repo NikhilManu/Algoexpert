@@ -1,3 +1,14 @@
+"""
+Given a Pattern and a string. The Pattern consist only of x and y. Find the substring x and substring y which matches with the string.
+
+Input: string : "gogopowerrangergogopowerranger", pattern : "xxyxxy"
+Output : ["go", "powerranger"]  # Here first values denotes x and second value denotes y
+
+
+Note: Pattern will only continue letters x and y
+"""
+    
+
 from collections import Counter
 
 def PatternMatcher(string,pattern):
