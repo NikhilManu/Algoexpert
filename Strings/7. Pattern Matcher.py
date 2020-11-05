@@ -5,7 +5,7 @@ Input: string : "gogopowerrangergogopowerranger", pattern : "xxyxxy"
 Output : ["go", "powerranger"]  # Here first values denotes x and second value denotes y
 
 
-Note: Pattern will only continue letters x and y
+Note: Pattern will only consist of letters x and y
 """
     
 
