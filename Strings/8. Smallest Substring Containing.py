@@ -15,7 +15,7 @@ Input: s = "ADOBECODEBANC", t = "ABC"
 Output: "BANC"
 """
 
-# Time - O()  | Space - O()
+# Time - O(B + S)  | Space - O(B + S)   
 --------------------------
 from collections import Counter
 
