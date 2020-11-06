@@ -21,7 +21,7 @@ def largestRange(nums):
         if not dic[i]:
             continue
         dic[i] = False
-        cur_length = 0
+        cur_length = 1
         min_range = i-1
         max_range = i+1
         while min_range in dic:
