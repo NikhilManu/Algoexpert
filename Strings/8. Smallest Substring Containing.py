@@ -23,12 +23,6 @@ def SmallestSubstringContains(s,t):
     if not s or not t or len(s) < len(t):  # if s or t is empty or if length of s is less than that of t.
         return '' 
     
-    if len(s) == len(t):
-        if s == t:
-            return s
-        else:
-            return ''
-    
     bound = [0,float('inf')]
     target = Counter(t)     # Ask to interviewer if you can use dependencies, if he says no implement it yourself like in Algoexpert
     current = {}
