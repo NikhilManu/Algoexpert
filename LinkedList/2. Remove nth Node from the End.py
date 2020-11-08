@@ -12,8 +12,25 @@ Output: [1,2,3,5]
 Input is not an array. It is only a representation of the linked List
 """
 
-# 
+# O(N) Time | O(1) Space
 ---------------
 def NthnodeFromEnd(node,n):
+    if not node:
+        return node
+    
+    first = second = node
+    for _ in range(n):
+        second = second.next
+        if not second:
+            return node.next
+        
+    while second.next:
+        first = first.next
+        second = second.next
+        
+    first.next = first.next.next
+    return node
+   
+ 
  
   
