@@ -1,7 +1,8 @@
 """ 
 LinkedList Construction (doubly LinkedList)
 """
-
+# O(N) Time | O(1) Space
+---------------------
 class DoublyLinkedLIst:
     def __init__():
         self.head = None 
