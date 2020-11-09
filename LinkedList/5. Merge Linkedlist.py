@@ -35,5 +35,25 @@ def MergeLinkedlist(l1,l2):
 # O(N+M) Time | Space O(N)
 ---------------------
 def MergeLinkedlist(l1,l2):
+    helper(l1,l2,None)
+    return l1 if l1.val < l2.val else l2
+
+def helper(p1,p2,prev):
+    if not p1:
+        prev.next = p2
+        return
+    
+    if not p2:
+        return 
+    
+    if p1.val < p2.val:
+        helper(p1.next,p2,p1)
+    else:
+        if prev:
+            prev.next = p2
+        newp2 = p2.next
+        p2.next = p1
+        helper(p1,newp2,p2)
+        
     
             
