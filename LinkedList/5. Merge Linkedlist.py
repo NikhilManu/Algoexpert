@@ -1,1 +1,39 @@
+""" 
+-----------------
+Merge Two Sorted List [ Name of this Qn in Leetcode ]
+------------------
+"""
 
+"""
+Merge two sorted linked lists and return it as a new sorted list. The new list should be made by splicing together the nodes of the first two lists.
+
+Input: l1 = [1,2,4], l2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+"""
+
+# Solution 1 ---> AlgoExpert Solution 1     # Solution 3 will be much Easier than this.
+# O(N+M) Time | O(1) Space
+-------------------
+def MergeLinkedlist(l1,l2):
+    p1,p2 = l1,l2
+    prev = None
+    while p1 and p2:
+        if p1.val < p2.val:
+            prev = p1
+            p1 = p1.next
+        else:
+            if prev:
+                prev.next = p2
+            prev = p2
+            p2 = p2.next
+            prev.next = p1
+            
+    prev.next = p1 or p2
+    return l1 if l1.val < l2.val else l2
+
+# Solution 2 ---> AlgoExpert Solution 2 (Recursive Solution)
+# O(N+M) Time | Space O(N)
+---------------------
+def MergeLinkedlist(l1,l2):
+    
+            
