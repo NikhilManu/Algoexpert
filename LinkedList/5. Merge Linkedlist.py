@@ -83,3 +83,18 @@ def mergeLinkedlist(l1,l2):
     cur.next = l1 or l2
     return dummy.next       # Return dummy.next, Not dummy
     
+
+# Solution 3 ---> My Solution (Recursive) 
+# O(N+M) Time | O(N+M) Space
+----------------------
+def MergeLinkedlist(l1,l2):
+    if not l1 or not l2:
+        return l1 or l2
+    if l1.val < l2.val:
+        l1.next = MergeLinkedlist(l1.next,l2)
+        return l1
+    else:
+        l2.next = MergeLinkedlist(l1,l2.next)
+        return l2
+    
+                                  
