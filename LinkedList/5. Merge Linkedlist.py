@@ -84,7 +84,7 @@ def mergeLinkedlist(l1,l2):
     return dummy.next       # Return dummy.next, Not dummy
     
 
-# Solution 3 ---> My Solution (Recursive) 
+# Solution 4 ---> My Solution (Recursive) 
 # O(N+M) Time | O(N+M) Space
 ----------------------
 def MergeLinkedlist(l1,l2):
