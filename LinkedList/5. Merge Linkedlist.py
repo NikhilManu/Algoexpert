@@ -32,7 +32,7 @@ def MergeLinkedlist(l1,l2):
     return l1 if l1.val < l2.val else l2
 
 # Solution 2 ---> AlgoExpert Solution 2 (Recursive Solution)
-# O(N+M) Time | Space O(N)
+# O(N+M) Time | Space O(N + M)
 ---------------------
 def MergeLinkedlist(l1,l2):
     helper(l1,l2,None)
@@ -55,5 +55,31 @@ def helper(p1,p2,prev):
         p2.next = p1
         helper(p1,newp2,p2)
         
+ 
+# Solution 3 ---> My Solution 
+# O(N+M) Time | O(1) Space
+----------------------
+class Node:
+    def __init__(self,val):
+        self.val = val
+        self.next = None
+        
+def mergeLinkedlist(l1,l2):
+    if not l1:
+        return l2
+    if not l2:
+        return l1
     
-            
+    dummy = Node('#')  # This is a Dummy Node
+    cur = dummy
+    while l1 and l2:
+        if l1.val < l2.val:
+            cur.next = l1   # if you dont create dummy and initialise cur as None. There will be a Error in this line
+            l1 = l1.next
+        else:
+            cur.next = l2    # if you dont create dummy and initialise cur as None. There will be a Error in this line
+            l2 = l2.next
+        cur = cur.next
+    cur.next = l1 or l2
+    return dummy.next       # Return dummy.next, Not dummy
+    
