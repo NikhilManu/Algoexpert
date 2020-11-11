@@ -1,7 +1,8 @@
 """
 LRU Cache [Name of this Qn in LeetCode]
 """
-# Solution ---
+# Solution --->
+O(1) Time | O(N) Space if cache included else O(1) 
 ------------
 class LRUCache:
     def __init__(self,maxsize):
