@@ -59,3 +59,26 @@ def checker(node, Sum, currentSum):
         return currentSum == Sum
 
     return checker(node.left, Sum, currentSum) or checker(node.right, Sum, currentSum)
+
+
+# Iterative Solution
+-------------------------
+def hasPathSum(root, Sum):
+    if not root:
+        return False
+
+    stack = [(root, 0)]
+    while stack:
+        node, currentSum = stack.pop()
+        if not node:
+            continue
+
+        currentSum += node.val
+        if not node.left and not node.right and currentSum == Sum:
+            return True
+
+        stack.append((node.left, currentSum))
+        stack.append((node.right, currentSum))                
+
+    return False
+
