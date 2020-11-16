@@ -20,22 +20,32 @@ All these Operations should be in O(1) Time
 ---------------------------------------
 class MinMaxStack:
     def __init__(self):
-        pass
+        self.stack = []
+        self.minmax = []
+        
     
     def push(self, val):
-        pass
-    
+        newminMax = { 'min' : val, 'max': val }
+        if len(self.minmax):
+            lastminMax = self.minmax[-1]
+            newminMax['min'] = min(val, lastminMax['min'])
+            newminMax['max'] = min(val, lastminMax['max'])
+        self.minmax.append(newminMax)
+        self.stack.append(val)
+        
     def pop(self):
-        pass
+        self.minmax.pop()
+        return self.stack.pop()
+        
     
     def peek(self):
-        pass
+        return self.stack[-1]
     
     def getMin(self):
-        pass
+        return self.minmax[-1]['min']
     
     def getMax(self):
-        pass
+        return self.minmax[-1]['max']
     
       
   
