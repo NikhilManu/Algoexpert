@@ -40,3 +40,22 @@ def calculateSum(node, currentSum, sums):
     calculateSum(node.left, currentSum, sums)
     calculateSum(node.right, currentSum, sums)
     
+
+"""
+Qn ---> Path Sums
+
+"""
+# Recursive Solution 
+------------------
+def hasPathSum(root, Sum):
+    return checker(root, Sum, 0)
+    
+def checker(node, Sum, currentSum):
+    if not node:
+    return 
+
+    currentSum += node.val
+    if not node.left and not node.right:
+        return currentSum == Sum
+
+    return checker(node.left, Sum, currentSum) or checker(node.right, Sum, currentSum)
