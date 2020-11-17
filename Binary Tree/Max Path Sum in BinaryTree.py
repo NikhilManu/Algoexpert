@@ -32,7 +32,7 @@ TestCase 2:
 """
 
 # Solution 1 ---> AlgoExpert Soln
-# 
+# O(N) Time | O(logN) Space
 -----------------
 def maxPathSum(root):
     return findMaxSum(root)[1]
