@@ -42,6 +42,6 @@ def InorderTraversal(root, callback):
             else:
                 callback(current)
                 current = current.right
-                predecessor.right = None
+                predecessor.right = None  # Breaks the Link with predecessor after visiting the Node
                 
                 
