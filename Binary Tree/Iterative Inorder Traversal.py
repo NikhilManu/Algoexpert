@@ -2,9 +2,9 @@
  Binary Tree Inorder Traversal [ Similar Qn in LeetCOde ]
 
 """
-#AlgoExpert Solution for is BullShit. just Learn Morris Traversal
+# I think AlgoExpert Solution for this is BullShit. just Learn Morris Traversal
 
-# Solution ----> With stack
+# Solution 1 ----> With stack
 # Time O(N) | O(N) Space
 --------------------------
 def InorderTraversal(root, callback):
@@ -21,8 +21,8 @@ def InorderTraversal(root, callback):
             cur = node.right
             
     
- # Solution ----> Morris Traversal
-# Time O(N) | O(N) Space
+# Solution 2 ----> Morris Traversal
+# Time O(N) | O(1) Space
 -------------------------- 
 def InorderTraversal(root, callback):
     current = root
