@@ -10,7 +10,7 @@ Populating Next Right Pointers in Each Node ll
 """
 
 # Solution --
-# O(N) Time | O(1) Space
+# O(N) Time | O(d) Space
 --------------------------
 def RightSiblingTree(root):
     mutate(root, None, None)
