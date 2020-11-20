@@ -40,7 +40,7 @@ def BFS(target, parents, k):
     cnt = 0
     while queue:
         if k == cnt:
-            return getValues(queue)
+            return getValues(queue)     # dont return list(queue), Since you dont have values in the queue ie.. you have the node itself, you want that node.val
             
         size = len(queue)
         for _ in range(size):
@@ -60,7 +60,7 @@ def BFS(target, parents, k):
     return []  # if graph doesnt Have k distance from the target Node
 
 
-def getValues(queue):
+def getValues(queue):   # Should Do this because in Our queue we hold the node itself, so we have to give the nodes value as the result
     res = []
     while queue:
         cur = queue.popleft()
