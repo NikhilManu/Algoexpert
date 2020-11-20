@@ -29,7 +29,7 @@ def Helper(node, target, closestValue):
     
     
 # Solution --- Iterative
-# Time O(log N) | O(1) Space
+# Time O(log N) Avg and O(N) Worst | O(1) Space
 ---------------------------------
 def FindClosestValue(root, target):
     cur = root
