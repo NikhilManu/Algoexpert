@@ -59,7 +59,7 @@ class BST:
             else:
                 if cur.left and cur.right:
                     cur.val = cur.right.getMinValue()
-                    cur.right.remove(cur.val, cur)   
+                    cur.right.delete(cur.val, cur)   
                 elif parent.left == cur:
                     parent.left = cur.left if cur.left else cur.right
                 elif parent.right == cur:
