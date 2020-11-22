@@ -45,6 +45,17 @@ def deleteNode(root, key, parent):
             elif parent.right == cur:
                 parent.right = cur.left or cur.right
             
+            break   # Important
+            
+    return root
+
+def findSuccessor(node):
+    succFather = node
+    succ = node.right
+    while succ.left:
+        succFather = succ
+        succ = succ.left
+    return succ, succFather
             
             
   
