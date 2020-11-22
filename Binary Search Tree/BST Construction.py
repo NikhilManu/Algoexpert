@@ -67,7 +67,7 @@ class BST:
                 
                 elif not parent:
                     if cur.left:
-                        cur.val = cur.left.value
+                        cur.val = cur.left.val
                         cur.left = cur.left.left
                         cur.right = cur.left.right
                     elif cur.right:
