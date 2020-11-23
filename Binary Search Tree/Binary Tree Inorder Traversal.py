@@ -59,7 +59,7 @@ def InorderTraversal(root):
             cur = cur.right
         else:
             predecessor = current.left 
-            while predecessor.right and predecessor.right != current:
+            while predecessor.right and predecessor.right != current:       # To Find the inorder Predecessor
                 predecessor = predecessor.right
                 
             if not predecessor.right:
