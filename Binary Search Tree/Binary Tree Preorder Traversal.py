@@ -29,7 +29,6 @@ def preorder(node, res):
 -----------------------------
 def PreorderTraversal(root):
     res, stack = [], [root]
-    cur = root
     while stack:
         node = stack.pop()
         if not node:
@@ -41,3 +40,28 @@ def PreorderTraversal(root):
         
     return res
   
+# SOlution 3 ---- Morris Traversal
+# Time O(N) | O(1) Space
+----------------------
+def PreorderTraversal(root):
+    res = []
+    cur = root
+    while cur:
+        if not cur.left:
+            res.append(cur.val)
+            cur = cur.right
+        else:
+            pred = cur.left
+            while pred.right and pred.right != cur:
+                pred = pred.right
+            
+            if not pred.right:
+                res.append(cur.val)
+                pred.right = cur
+                cur = cur.left
+            else:
+                pred.right = None
+                cur = cur.right
+    
+    return res
+    
