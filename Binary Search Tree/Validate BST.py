@@ -27,5 +27,10 @@ def validateBST(node, minVal, maxVal):
     if not node:
         return True
    
-    if minVal > node.val
+    if minVal > node.val or node.val >= maxVal:
+        return False
+    
+    return validateBST(node.left, minVal, node.val) and validateBST(node.right, node.val, maxVal)
+
+
 
