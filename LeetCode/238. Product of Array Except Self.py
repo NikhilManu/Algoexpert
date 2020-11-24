@@ -31,3 +31,16 @@ def ProductExceptSelf(nums):
     return [i*j for i,j in zip(left, right)]    # Same as multiplying left element and right element at same index
 
 
+# Solution 2 --- Without left and right Array
+# Time O(N) | O(1) space without including the output array
+-------------------------------------
+def ProductExceptself(nums):
+    res = [1] * len(nums)
+    for i in range(1, len(nums)):
+        res[i] = res[i-1] * nums[i-1]
+    
+    for i in reversed(range(len(nums)):
+        res[i] *= R
+        R *= nums[i]
+  
+    return res
