@@ -40,7 +40,32 @@ def PostOrder(root):
         
     return res[::-1]
 
+# Solution 3 --- Morris Traversal
+# Time O(N) | Space O(1)
+------------------------------
+def postOrder(root):
+    res = []
+    cur = root
+    while cur:
+        if not cur.right:
+            res.append(cur.val)
+            cur = cur.left
+        else:
+            succ = cur.right
+            while succ.left and succ.left != cur:
+                succ = succ.left
+            
+            if not succ.left:
+                res.append(cur.val)
+                succ.left = cur
+                cur = cur.right
+            else:
+                succ.left = None
+                cur = cur.left
+    
+    return res[::-1]
 
+                
         
       
   
