@@ -44,3 +44,33 @@ def ProductExceptself(nums):
         R *= nums[i]
   
     return res
+             
+                      
+# Solution 3 ----- Errichto Solution ( Little Modified Solution )  ---> Errichto is Youtuber 
+# O(N) Time | Space O(1) not including the output array
+-----------------------------------
+                      
+def productExceptSelf(nums):
+    product, zeros = 1, 0
+    for x in nums:
+        if x == 0:
+            zeros += 1
+        else:
+            product *= x
+
+    res = [0] * len(nums)
+
+    if zeros:
+        if zeros == 1:
+            for i in range(len(nums)):
+                if nums[i] == 0:
+                    res[i] = product
+        else:
+            pass
+
+    else:
+        for i in range(len(nums)):
+            res[i] = product // nums[i]
+
+
+    return res
