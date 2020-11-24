@@ -52,7 +52,7 @@ def postOrder(root):
             cur = cur.left
         else:
             succ = cur.right
-            while succ.left and succ.left != cur:
+            while succ.left and succ.left != cur:   # Find the Inorder Successor
                 succ = succ.left
             
             if not succ.left:
