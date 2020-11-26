@@ -50,10 +50,13 @@ def aresameBST(array1, array2, rootidx1, rootidx2, minVal, maxVal):
     if array1[rootidx1] != array2[rootidx2]:
         return False
     
-    leftrootidx1, leftrootidx2 = getidxSmaller(array1, rootidx1, ), getidxSmaller(array2, rootidx2, )
-    rightrootidx1, rightrootidx2 = getidxBigger(array1, rootidx1, ), getidxBigger(array2, rootidx2, )
+    leftrootidx1, leftrootidx2 = getidxSmaller(array1, rootidx1, minVal), getidxSmaller(array2, rootidx2, minVal)
+    rightrootidx1, rightrootidx2 = getidxBiggerorEqual(array1, rootidx1, maxVal), getidxBiggerorEqual(array2, rootidx2, maxVal)
     
-    pass
+    currentVal = array1[rootidx1]
+    leftSame = aresameBST(array1, array2, leftrootidx1, leftrootidx2, minVal, currentVal)
+    rightSame = aresameBST(array1, array2, rightrootidx1, rightrootidx2, currentVal, maxVal)
+    return leftSame and rightSame
 
 def getidxSmaller(arr, startidx, minVal):
     for i in range(startidx + 1, len(arr)):
@@ -61,7 +64,7 @@ def getidxSmaller(arr, startidx, minVal):
             return i
     return -1
 
-def getidxSmaller(arr, startidx, maxVal):
+def getidxBiggerorEqual(arr, startidx, maxVal):
     for i in range(startidx + 1, len(arr)):
         if arr[i] >= arr[startidx] and arr[i] < maxVal:
             return i
