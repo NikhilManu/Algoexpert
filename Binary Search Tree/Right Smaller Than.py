@@ -1,8 +1,6 @@
 """
  Count of Smaller Numbers After Self [ Name of this Qn in Leetcode ] ---> Not Sure if this is the Qn in AlgoExpert
  
- PreRequisites: Binary Indexed Tree
- Link For Tutorial: https://www.youtube.com/watch?v=CWDQJGaN1gY
 """
 
 """
