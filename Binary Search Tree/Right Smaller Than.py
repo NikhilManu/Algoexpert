@@ -20,6 +20,39 @@ To the right of 2 there is only 1 smaller element (1).
 To the right of 6 there is 1 smaller element (1).
 To the right of 1 there is 0 smaller element.
 """
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None 
+        self.duplicate = 1
+        self.lessVal = 0
+    
+    def insert(self, val):
+        if val == self.val:
+            self.duplicate += 1
+            return self.lessVal 
+        elif val < self.val:
+            self.lessVal += 1
+            if not self.left:
+                self.left = Node(val)
+                return 0
+            else:
+                return self.left.insert(val)
+        else:
+            if not self.right:
+                self.right = Node(val)
+                return self.lessVal + self.duplicate
+            else:
+                return self.lessVal + self.duplicate + self.right.insert(val)
+            
+    
 def RightSmaller(nums):
+    res = [0] * len(nums)
+    root = Node(nums[-1])
+    for i in reversed(range(len(nums)-1)):
+        res[i] = root.insert(nums[i])
+        
+    return res
 
 
