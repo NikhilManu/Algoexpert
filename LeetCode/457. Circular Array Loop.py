@@ -25,3 +25,28 @@ Explanation: The movement from index 1 -> 2 -> 1 -> ... is not a cycle, because 
 """
 
 def CircularArrayLoop(nums):
+    for startidx in range(len(nums)):
+        
+        curidx, numberofVisited = startidx, 0
+        direction = 1 if nums[curidx] > 0 else -1
+        
+        while numberofVisited < len(nums) and goingSameDirection(direction, nums[curidx]):
+            nextidx = getNextidx(curidx, nums)
+            numberofVisited += 1
+            
+            if curidx == startidx:
+                if numberofVisited == 1:     # if numberofVIsited = 1, that means cycle length is 1 and that is not valid According to Qn
+                    break
+                              
+                if numberofVisited > 1:
+                    return True
+        
+    return False
+
+def getNextidx(idx, arr):
+    jump = arr[idx]
+    nextidx = (jump + idx) % len(arr)
+    return nextidx if nextidx >= 0 else len(arr) + nextidx
+
+def goingSameDirection(direction, currentDirection):
+    return direction * currentDirection > 0
