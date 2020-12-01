@@ -23,12 +23,12 @@ def RiverSizes(grid):
     return area
 
 def DFS(grid, i, j, seen):
-    if outofBounds(i,j) or grid[i][j] == 0 or (i,j) in seen:
+    if outofBounds(i,j, grid) or grid[i][j] == 0 or (i,j) in seen:
         return 0
     seen.add((i,j))
     return 1 + DFS(grid, i+1, j, seen) + DFS(grid, i-1, j, seen) + DFS(grid, i, j+1, seen) + DFS(grid, i, j-1, seen) 
 
-def outofBounds(i,j):
+def outofBounds(i,j,grid):
     return i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0])
    
                        
