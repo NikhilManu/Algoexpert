@@ -10,44 +10,44 @@ that has both p and q as descendants (where we allow a node to be a descendant o
 # Time O(N) | Space O(N)
 -------------------------
 def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-  parent = self.getParent(root)
-  depthOne = self.getDepth(p, root, parent)
-  depthTwo = self.getDepth(q, root, parent)
-  if depthOne > depthTwo:
-      return self.makeSamelevel_and_findAncestor(p, q, depthOne - depthTwo, parent)
-  else:
-      return self.makeSamelevel_and_findAncestor(q, p, depthTwo - depthOne, parent)
+    parent = self.getParent(root)
+    depthOne = self.getDepth(p, root, parent)
+    depthTwo = self.getDepth(q, root, parent)
+    if depthOne > depthTwo:
+        return self.makeSamelevel_and_findAncestor(p, q, depthOne - depthTwo, parent)
+    else:
+        return self.makeSamelevel_and_findAncestor(q, p, depthTwo - depthOne, parent)
 
 def makeSamelevel_and_findAncestor(self,lower, higher, diff, parent):
-  while diff > 0:
-      lower = parent[lower]
-      diff -= 1
+    while diff > 0:
+        lower = parent[lower]
+        diff -= 1
 
-  while lower != higher:
-      lower = parent[lower]
-      higher = parent[higher]
+    while lower != higher:
+        lower = parent[lower]
+        higher = parent[higher]
 
-  return lower
+    return lower
 
 
 def getDepth(self, node, root, parent):
-  depth = 0
-  while node != root:
-      node = parent[node]
-      depth += 1
-  return depth
+    depth = 0
+    while node != root:
+        node = parent[node]
+        depth += 1
+    return depth
 
 def getParent(self, root):
-  parent = {root:None}
-  stack = [root]
-  while stack:
-      node = stack.pop()
-      if node.left:
-          parent[node.left] = node
-          stack.append(node.left)
+    parent = {root:None}
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        if node.left:
+            parent[node.left] = node
+            stack.append(node.left)
 
-      if node.right:
-          parent[node.right] = node
-          stack.append(node.right)
+        if node.right:
+            parent[node.right] = node
+            stack.append(node.right)
 
-  return parent
+    return parent
