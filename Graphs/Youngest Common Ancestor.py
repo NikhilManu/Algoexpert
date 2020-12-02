@@ -10,7 +10,7 @@ Given a tree, find the lowest common ancestor (LCA) of two given nodes in the tr
 """
 
 #Solution - if the Tree contains .parent 
-# Time O(N) | Space O(1)
+# Time O(d) | Space O(1)
 ----------------------------
 def YoungestCommonAncestor(root, node1, node2):
     depthOne = getDepth(node1, root)
