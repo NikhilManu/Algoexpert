@@ -4,7 +4,8 @@ Similar Qn - Cheapest Flights Within K Stops
 
 """
 Given a list of Aiports, a list of OneWay Route, and a starting Airport.
-Write a Program to find minimum number of connection which make every aiport accesible from the starting Airport
+You can make new connections for airports
+Write a Program to find minimum number of connection which we need to make so that every aiport is accesible from the starting Airport
 """
 
 # Solution
