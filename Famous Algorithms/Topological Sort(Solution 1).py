@@ -11,6 +11,9 @@ If there are many valid answers, return any of them. If it is impossible to fini
 Input: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]
 Output: [3, 1, 2, 0]
 """
+#Solution -->
+# Time O(V + E) | Space O(V + E)
+-------------------------
 def TopSort(jobs, deps):
     jobgraph = createGraph(jobs, deps)
     return getOrderedJob(jobgraph)
