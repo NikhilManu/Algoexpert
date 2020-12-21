@@ -11,7 +11,7 @@ Input: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]
 Output: [3, 1, 2, 0]
 """
 #Solution --
-# Time O(
+# Time O(V + E) and Space
 --------------------
 def TopSort(jobs, deps):
     jobgraph = createGraph(jobs, deps)
