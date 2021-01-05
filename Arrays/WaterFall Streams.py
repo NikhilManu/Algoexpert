@@ -17,20 +17,20 @@ def waterfallStreams(arr, src):
 		curRow = arr[row][:]
 		for ind in range(len(curRow)):
 			above = rowabove[ind]
-			
+
 			waterAbove = above < 0
 			presentBlock = curRow[ind] == 1
-			
+
 			if not waterAbove:
 				continue
-				
+
 			if not presentBlock:
 				curRow[ind] += above
 			else:
 				curRow = splitWaterandfill(curRow, rowabove, ind, above)
-					
+
 		rowabove = curRow
-				
+
 	return [i * -100 for i in rowabove]
 				
 	
