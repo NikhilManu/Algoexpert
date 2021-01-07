@@ -1,3 +1,11 @@
+"""
+Not Found Currently
+"""
+"""
+"""
+
+# time O(N) | Space O(d)
+-------------------------------
 def productSum(arr,depth = 1):
 	prod = 0
 	for i in arr:
