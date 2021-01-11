@@ -22,4 +22,4 @@ def productSum(arr,depth = 1):
 		else:
 			prod += depth * i
 	return prod
-			
+
