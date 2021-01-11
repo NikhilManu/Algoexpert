@@ -35,3 +35,24 @@ def getPerm(arr, curPerm, res):
 		newArr = arr[:i] + arr[i+1:]
 		newPerm = curPerm + [arr[i]]
 		getPerm(newArr, newPerm, res)
+
+# Solution 2
+# O(N * N!) Time | O(N * N!) Space 
+-------------------------------
+def getPermutations(array):
+    permutations = []
+	getPermutation(0, array, permutations)
+	return permutations
+
+def getPermutation(i, arr, perm):
+	if i == len(arr) - 1:
+		perm.append(arr[:])
+	else:
+		for j in range(i, len(arr)):
+			swap(arr, i, j)
+			getPermutation(i + 1, arr, perm)
+			swap(arr, i, j)
+
+def swap(arr, i, j):
+	arr[i], arr[j] = arr[j], arr[i]
+
