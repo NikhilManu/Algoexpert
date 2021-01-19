@@ -33,7 +33,7 @@ def numberOfBinaryTreeTopologies(n):
 # 
 ------------------------------
 def numberOfBinaryTreeTopologies(n):
-  dp = [0] * (n+1)
+  	dp = [0] * (n+1)
 	dp[0] = 1
 	for i in range(1, n + 1):
 		for left in range(i):
