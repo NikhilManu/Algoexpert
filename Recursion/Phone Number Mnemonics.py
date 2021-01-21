@@ -13,7 +13,7 @@ Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
 """
 
 # Solution
-# 
+# O( 4^n * n) Time and Space
 -----------------------------
 
 def phoneNumberMnemonics(phoneNumber):
