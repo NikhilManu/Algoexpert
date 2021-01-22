@@ -2,6 +2,12 @@
 """
 
 """
+Given list of which contains the duration of each Queries. Minimize the total waiting time and return the waiting time.
+Waiting Time is time process is waiting before its execution..ie.. 
+
+eg: [1, 8, 5]
+waiting time of 5 is 1 + 8 = 9
+
 """
 # Solution - Algoexpert
 # O(n logn) Time | O(1) Space
