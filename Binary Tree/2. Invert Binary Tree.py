@@ -20,7 +20,7 @@ Output:
 9   6 3   1
 
 """
-# Solution 1 --> Iterative Solution
+# Solution 1 --> Iterative Solution using Queue
 #
 ---------------------
 def InvertBinaryTree(root):
@@ -37,7 +37,23 @@ def InvertBinaryTree(root):
 
     return root
 
-# Solution 2 ---> Recursive Solution
+# SOlution 2 --> Iterative Solution using stack
+#
+----------------------------------
+def invertBinaryTree(root):
+     stack = [root]
+     while stack:
+          node = stack.pop()
+          if not node:
+             continue
+          node.left, node.right = node.right, node.left
+          
+          stack.append(node.left)
+          stack.append(node.right)
+          
+     return root
+
+# Solution 3 ---> Recursive Solution
 # 
 ---------------------
 def InvertBinaryTree(root):
