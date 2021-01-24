@@ -21,18 +21,19 @@ Return 3, which is the length of the path [4,2,1,3] or [5,2,1,3].
 # Solution 
 # O(N) Time | O(logN) Space
 ----------------------
-def DiameterofTree(root):
-    return findDiameter(root)[1]
+def binaryTreeDiameter(tree):
+return dfs(tree)[1]
 
-def findDiameter(root):
-    if not root:
-        return 0,0  # depth, dia
-    
-    left = findDiameter(root.left)
-    right = findDiameter(root.right)
-    
-    depth = max(left[0], right[0]) + 1
-    diameter = max(left[1], right[1], left[0] + right[0])   
+def dfs(node):
+if not node:
+    return 0,0 
+
+leftHeight, leftDiameter = dfs(node.left)
+rightHeight, rightDiameter = dfs(node.right)
+
+Height = max(leftHeight, rightHeight) + 1
+Diameter = max(leftDiameter, rightDiameter, leftHeight + rightHeight)
+return Height, Diameter   
     """
     We are maximizing diameter,
     we have 3 poosibilties
