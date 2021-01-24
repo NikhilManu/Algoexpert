@@ -11,22 +11,22 @@ Find the inorder Successor of a Binary Tree
 # O(h) Time | O(1) SPace
 ------------------------
 def findSuccessor(tree, node):
-if node.right:
-return getLeftmostOfRight(node)
+    if node.right:
+        return getLeftmostOfRight(node)
 
-return getRightmost(node)
+    return getRightmost(node)
 
 
 def getRightmost(node):
-cur = node
-while cur.parent and cur.parent.right == cur:
-cur = cur.parent
+    cur = node
+    while cur.parent and cur.parent.right == cur:
+        cur = cur.parent
 
-return cur.parent
+    return cur.parent
 
 def getLeftmostOfRight(node):
-cur = node.right
-while cur.left:
-cur = cur.left
+    cur = node.right
+    while cur.left:
+        cur = cur.left
 
-return cur
+    return cur
