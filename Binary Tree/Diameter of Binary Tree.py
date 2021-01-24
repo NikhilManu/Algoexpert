@@ -19,32 +19,33 @@ Return 3, which is the length of the path [4,2,1,3] or [5,2,1,3].
 """
 
 # Solution 
-# O(N) Time | O(logN) Space
+# O(N) Time | O(h) Space
 ----------------------
 def binaryTreeDiameter(tree):
-return dfs(tree)[1]
+    return dfs(tree)[1]
 
 def dfs(node):
-if not node:
-    return 0,0 
+    if not node:
+        return 0,0 
 
-leftHeight, leftDiameter = dfs(node.left)
-rightHeight, rightDiameter = dfs(node.right)
+    leftHeight, leftDiameter = dfs(node.left)
+    rightHeight, rightDiameter = dfs(node.right)
 
-Height = max(leftHeight, rightHeight) + 1
-Diameter = max(leftDiameter, rightDiameter, leftHeight + rightHeight)
-return Height, Diameter   
+    Height = max(leftHeight, rightHeight) + 1
+    Diameter = max(leftDiameter, rightDiameter, leftHeight + rightHeight)
+    return Height, Diameter   
+
+
     """
     We are maximizing diameter,
     we have 3 poosibilties
-    1. it can be the left Subtree  (not including the root) ---> we use left[1]
-    2. it can be the right Subtree (not including the root) ----> we use right[1]
-    3. it can be the sum of left and right Subtree (including the root) ---> we use left[0] + right[0], since we are calculating depth of any node that may 
-    be a potential root of diameter
+    1. it can be in the left Subtree  (not passing through the root) 
+    2. it can be in the right Subtree (not passing through the root) 
+    3. it can be a path which passes through the root
     
     these three possiblities are only ones at any given point
     """
-    return depth, diameter
+
 
 
           
