@@ -1,5 +1,7 @@
 """
 Minimum Area Rectangle [ Name in LeetCode ]
+
+Check Rectangle Mania in graph Section and see if you can Solve with this method. 
 """
 
 """
