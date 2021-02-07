@@ -52,11 +52,8 @@ def apartmentHunting(blocks, reqs):
 def getMaxDist(blocks, minDist):
 	maxDist = [0] * len(blocks)
 	for i in range(len(blocks)):
-		maxdist = float('-inf')
 		for j in range(len(minDist)):
-			maxdist = max(maxdist, minDist[j][i])
-			
-		maxDist[i] = maxdist
+			maxDist[i] = max(maxDist[i], minDist[j][i])	
 		
 	return maxDist
 	
