@@ -41,37 +41,42 @@ def ApartmentHunting(blocks,reqs):
 # Solution 2 ----> Optimal Solution
 # Time - O(BR)  |  Space - O(BR)
 ------------------------------
-def ApartmentHunting(blocks,req):
-    minDistancesfromblock = list(map(lambda req: getminDistancefromblock(blocks,req), reqs)) # Minimum Distance for each block for each requirement
-    maxDistancefromblock = getmaxDistancefromblock(blocks,minDistancesfromblock)
-    return maxDistancefromblock.index(min(maxDistancefromblock))
-    
-def getminDistancefromblocks(blocks,req):
-    minDistances = [0] * len(blocks)
-    closestidx = -1
-    for i in range(len(blocks)):
-        if blocks[i][req]:
-            closestidx = i
-        if closestidx != -1:
-            minDistances[i] = abs(i - closestidx)
-    
-    closestidx = -1
-    for i in reveresd(range(len(blocks))):
-        if blocks[i][req]:
-            closestidx = i
-        if closestidx != -1:
-            minDistances[i] = min(minDistances[i], abs(i - closestidx))
-        
-    return minDistances
+def apartmentHunting(blocks, reqs):
+	minReqDist = []
+	for req in reqs:
+		minReqDist.append(getMinDist(blocks, req))
+	
+	maxDist = getMaxDist(blocks, minReqDist)
+	return maxDist.index(min(maxDist))
 
-def getmaxDistancefromBlock(blocks,minDistancesfromblock):
-    maxDistance = [0] * len(blocks)
-    for i in range(len(blocks)):
-        maxdist = float('-inf')
-        for j in range(len(minDistancesfromblock)):
-            maxdist = max(maxdist, minDistancesfromblock[j][i])  # This is [j][i] not [i][j].
-        maxDistance[i] = maxdist
-    return maxDistance
+def getMaxDist(blocks, minDist):
+	maxDist = [0] * len(blocks)
+	for i in range(len(blocks)):
+		maxdist = float('-inf')
+		for j in range(len(minDist)):
+			maxdist = max(maxdist, minDist[j][i])
+			
+		maxDist[i] = maxdist
+		
+	return maxDist
+	
+def getMinDist(blocks, req):
+	minDist = [float('inf')] * len(blocks)
+	closest = float('inf')
+	for i in range(len(blocks)):
+		if blocks[i][req]:
+			closest = i
+			
+		minDist[i] = abs(closest - i)
+	closest = float('inf')
+	for i in reversed(range(len(blocks))):
+		if blocks[i][req]:
+			closest = i
+			
+		minDist[i] = min(minDist[i], abs(closest - i))
+		
+	return minDist
+				
         
     
                 
