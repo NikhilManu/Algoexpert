@@ -16,17 +16,17 @@ The results array is the same length as the competitions array, and the indices 
 # O(n) Time and O(k) space where k is number of teams
 -----------------------------------
 def tournamentWinner(competitions, results):
-  dic = {}
+    	dic = {}
 	best = 0
 	for team, winner in zip(competitions, results):
 		home, away = team
 		if winner == 1:
-			update(dic, home, best)
+			update(dic, home)
 		else:
-			update(dic, away, best)
+			update(dic, away)
 		
 		
-    return 
+    	return max(dic, key = dic.get)
 
 def update(dic, team):
 	if team not in dic:
