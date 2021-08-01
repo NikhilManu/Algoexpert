@@ -1,5 +1,4 @@
 """
-Name of the Qn in AlgoExpert is 'Longest Peak'. I am Just changing the name of the Qn to make it more clear.
 ---------------------------------
 Q.Longest Mountain in Array    [Available in Leetcode]
 ---------------------------------
