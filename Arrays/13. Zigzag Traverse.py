@@ -16,7 +16,7 @@ Input:
 Output:  [1,4,2,3,5,7,8,6,9]
 
 """
-# Time - O(n)  |  Space - O(n)
+# Time - O(n)  |  Space - O(1)
 def ZigZag(arr):
     if not arr:
         return []
